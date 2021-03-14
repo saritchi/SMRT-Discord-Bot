@@ -56,6 +56,8 @@ async def trivia(ctx):
 
   def checkChoice(m):
     choices = ['a', 'b', 'c', 'd', 'A', 'B', 'C', 'D']
+    if m.content.isupper():
+      m.content = m.content.lower()
     return m.content in choices and m.channel == channel
 
   def convertCat(cat):
